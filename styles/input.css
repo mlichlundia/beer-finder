@@ -1,0 +1,17 @@
+.search__container {
+	margin: 2rem 0 0;
+	display: flex;
+	justify-content: center;
+}
+
+input {
+	margin: 0 0.75rem 0 0;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+	outline: none;
+	border: 0.125rem solid rgb(238, 238, 238);
+}
+
+.invalid {
+	border: 0.125rem solid rgb(219 102 102);
+}

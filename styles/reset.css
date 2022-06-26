@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	color: color(dark);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: inherit;
+}
+
+body {
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+ul,
+ol {
+	list-style-type: none;
+}
+
+img,
+svg {
+	max-width: 100%;
+	display: block;
+}
+
+button,
+select,
+a {
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+input {
+	font: inherit;
+}
