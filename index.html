@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/index.css">
   <link rel="stylesheet" href="./styles/input.css">
+  <link rel="stylesheet" href="./styles/beer.css">
   <title>Beer Finder</title>
 </head>
 
@@ -24,21 +25,30 @@
 
   <main>
     <div class="search__container">
-      <div class="search__field">
-        <label for="search"></label>
-        <input id="search" type="text">
-      </div>
-      <button>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-          fill="currentColor" viewBox="0 0 16 16">
-          <path
-            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-        </svg>
-      </button>
+      <form>
+        <div class="search__field">
+          <label for="search"></label>
+          <input id="search" type="text" pattern="([0-9A-Za-z\s]+)+">
+        </div>
+        <button>
+          <svg xmlns=" http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+      </form>
     </div>
     <div class="prev-serches__container">
     </div>
+    <div class="beer__list"></div>
   </main>
+
+  <script type="module" src="./scripts/constants.js"></script>
+  <script type="module" src="./scripts/search.js"></script>
+  <script type="module" src="./scripts/isValid.js"></script>
+  <script type="module" src="./scripts/beer.js"></script>
+
 
 </body>
 
