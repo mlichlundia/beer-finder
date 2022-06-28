@@ -1,4 +1,8 @@
 .search__container {
+	margin: 0 0 1rem;
+}
+
+.search__container form {
 	margin: 2rem 0 0;
 	display: flex;
 	justify-content: center;
@@ -14,4 +18,15 @@ input {
 
 .invalid {
 	border: 0.125rem solid rgb(219 102 102);
+}
+
+.prev-search {
+	margin: 0.125rem;
+}
+
+.prev-serches__container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 20rem;
+	margin: auto;
 }
