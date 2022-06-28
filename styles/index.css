@@ -24,6 +24,9 @@ header button {
 main {
 	margin: 2rem auto;
 	width: 25rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 h1 {
@@ -44,4 +47,17 @@ button {
 
 button:hover {
 	background: rgb(209, 209, 209);
+}
+
+#more {
+	margin: auto;
+}
+
+#up {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
 }
