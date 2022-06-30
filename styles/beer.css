@@ -32,3 +32,11 @@
 	background: rgb(241, 226, 226);
 	border-radius: 0.75rem;
 }
+
+.remove {
+	color: rgb(200, 32, 32);
+}
+
+.hide {
+	display: none;
+}

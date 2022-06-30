@@ -34,10 +34,15 @@ export function savePrevSearch() {
 	prevSearch
 		? localStorage.setItem(
 				'prev-search',
-				JSON.stringify(Array.from(new Set([...prevSearch, searchInput.value])))
+				JSON.stringify(
+					Array.from(new Set([...prevSearch, searchInput.value.toLowerCase()]))
+				)
 		  )
 		: JSON.stringify(
-				localStorage.setItem('prev-search', JSON.stringify([searchInput.value]))
+				localStorage.setItem(
+					'prev-search',
+					JSON.stringify([searchInput.value.toLowerCase()])
+				)
 		  );
 
 	showPrevSearch();
@@ -47,7 +52,7 @@ function showPrevSearch() {
 	const prevSearch = JSON.parse(localStorage.getItem('prev-search'));
 
 	prevSearchContainer.innerHTML = '';
-	prevSearch.forEach(
+	prevSearch?.forEach(
 		(item) =>
 			(prevSearchContainer.innerHTML += `<button class='prev-search'>${item}</button>`)
 	);

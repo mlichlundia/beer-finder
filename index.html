@@ -21,7 +21,11 @@
 
   <header>
     <h1>beer finder</h1>
-    <button>Favourites</button>
+    <div class="favs">
+      <span id="fav-count">0</span>
+      <button disabled="true">Favourites</button>
+    </div>
+
   </header>
 
   <main>
@@ -59,6 +63,7 @@
   <script type="module" src="./scripts/beer.js"></script>
   <script type="module" src="./scripts/loadMore.js"></script>
   <script type="module" src="./scripts/moveUp.js"></script>
+  <script type="module" src="./scripts/favs.js"></script>
 
 
 </body>
