@@ -1,0 +1,17 @@
+.fav-modal .modal__content {
+	position: relative;
+	max-height: 40rem;
+	overflow: auto;
+}
+
+.close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}

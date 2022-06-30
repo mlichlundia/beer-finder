@@ -1,3 +1,4 @@
+import { FavModal } from './favModal.js';
 import { enableFavButton } from './favs.js';
 
 export class Beer {
@@ -59,14 +60,15 @@ export class Beer {
 
 	setHandlers() {
 		this.addButton.addEventListener('click', this.addToFav.bind(this));
+		this.removeButton.addEventListener('click', this.removeFromFav.bind(this));
 	}
 
 	addToFav() {
 		const favCount = document.querySelector('#fav-count');
 		const storedFavs = JSON.parse(localStorage.getItem('favs'));
 		const newFavs = storedFavs?.length
-			? storedFavs.concat(+this.data.id)
-			: [+this.data.id];
+			? storedFavs.concat(this.data)
+			: [this.data];
 
 		this.toggleButtons();
 
@@ -74,6 +76,22 @@ export class Beer {
 		localStorage.setItem('favs', JSON.stringify(newFavs));
 
 		enableFavButton();
+		FavModal.updateListAdd(this.data);
+	}
+
+	removeFromFav() {
+		const favCount = document.querySelector('#fav-count');
+		const storedFavs = JSON.parse(localStorage.getItem('favs'));
+		const newFavs = storedFavs.filter((item) => item.id !== this.data.id);
+
+		this.toggleButtons();
+
+		favCount.innerText = +favCount.innerText - 1;
+		localStorage.setItem('favs', JSON.stringify(newFavs));
+
+		enableFavButton();
+		FavModal.updateListRemove(this);
+		console.log(this.addButton, this.removeButton);
 	}
 
 	toggleButtons() {
@@ -83,9 +101,12 @@ export class Beer {
 
 	checkIfFav() {
 		const storedFavs = JSON.parse(localStorage.getItem('favs'));
+		const isFav = storedFavs?.filter((item) => item.id === this.data.id);
 
-		if (storedFavs?.includes(this.data.id)) {
+		if (isFav?.length) {
 			this.toggleButtons();
 		}
 	}
 }
+
+new FavModal(document.querySelector('main'));
