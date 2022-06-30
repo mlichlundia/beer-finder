@@ -83,8 +83,9 @@ export class Beer {
 
 	checkIfFav() {
 		const storedFavs = JSON.parse(localStorage.getItem('favs'));
+		const hasStoredFavs = storedFavs?.includes(this.data.id);
 
-		if (storedFavs?.includes(this.data.id)) {
+		if (hasStoredFavs) {
 			this.toggleButtons();
 		}
 	}
