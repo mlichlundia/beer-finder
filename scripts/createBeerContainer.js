@@ -1,7 +1,9 @@
 import { Beer } from './beer.js';
+import { hideAll } from './loadMore.js';
 import { savePrevSearch } from './search.js';
 
 const container = document.querySelector('.beer__list');
+const loadMore = document.querySelector('#more');
 
 function isEmpty(data) {
 	return !data.length ? true : false;
@@ -23,9 +25,11 @@ export function createBeerContainer(data) {
 	});
 
 	moveToFirst();
+	loadMore.style.display = 'block';
+	hideAll(Array.from(document.querySelectorAll('.beer__card')).splice(5));
 }
 
-function moveToFirst() {
+export function moveToFirst() {
 	const firstElement = document.querySelector('.beer__card');
 
 	firstElement.scrollIntoView();

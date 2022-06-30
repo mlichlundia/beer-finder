@@ -2,6 +2,7 @@ import { CONSTANTS } from './constants.js';
 import { convert } from './convertInputValue.js';
 import { fetchBeers } from './getBeers.js';
 import { isValid } from './isValid.js';
+import { resetLoadCounter } from './loadMore.js';
 
 const searchInput = document.querySelector('#search');
 const form = document.querySelector('.search__container form');
@@ -24,6 +25,7 @@ function onSubmit(e) {
 	e.preventDefault();
 	searchInput.blur();
 	fetchBeers(convert(searchInput.value));
+	resetLoadCounter();
 }
 
 export function savePrevSearch() {

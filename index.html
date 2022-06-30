@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./styles/index.css">
   <link rel="stylesheet" href="./styles/input.css">
   <link rel="stylesheet" href="./styles/beer.css">
+  <link rel="stylesheet" href="./styles/modal.css">
   <title>Beer Finder</title>
 </head>
 
@@ -42,12 +43,22 @@
     <div class="prev-serches__container">
     </div>
     <div class="beer__list"></div>
+    <button id="more" style="display:none">load more</button>
+    <button id="up" style="display: none;">🡹</button>
+
+    <div class="modal">
+      <div class="modal__content">
+        <p>There are no more beers in this search.</p>
+      </div>
+    </div>
   </main>
 
   <script type="module" src="./scripts/constants.js"></script>
   <script type="module" src="./scripts/search.js"></script>
   <script type="module" src="./scripts/isValid.js"></script>
   <script type="module" src="./scripts/beer.js"></script>
+  <script type="module" src="./scripts/loadMore.js"></script>
+  <script type="module" src="./scripts/moveUp.js"></script>
 
 
 </body>
