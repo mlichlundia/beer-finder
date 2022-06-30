@@ -51,5 +51,19 @@ function showPrevSearch() {
 		(item) =>
 			(prevSearchContainer.innerHTML += `<button class='prev-search'>${item}</button>`)
 	);
+
+	const searches = document.querySelectorAll('.prev-search');
+
+	searches.forEach((item) =>
+		item.addEventListener('click', (e) => searchPrev(e))
+	);
 }
 showPrevSearch();
+
+function searchPrev(e) {
+	const input = document.querySelector('#search');
+	const form = document.querySelector('form');
+
+	input.value = e.target.innerText;
+	form.dispatchEvent(new Event('submit'));
+}
