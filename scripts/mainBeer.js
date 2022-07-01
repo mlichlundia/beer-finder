@@ -9,6 +9,7 @@ export class MainBeer extends Beer {
 
 	openModal() {
 		const modal = new BeerModal(this.data, document.querySelector('main'));
+
 		modal.openModal();
 	}
 }
