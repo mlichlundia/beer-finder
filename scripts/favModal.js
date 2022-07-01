@@ -104,6 +104,5 @@ export class FavModal {
 				item.querySelector('button').classList.remove('hide');
 			}
 		});
-		console.log(beer, beer);
 	}
 }

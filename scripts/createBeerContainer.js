@@ -1,5 +1,6 @@
 import { Beer } from './beer.js';
 import { hideAll } from './loadMore.js';
+import { MainBeer } from './mainBeer.js';
 import { savePrevSearch } from './search.js';
 
 const container = document.querySelector('.beer__list');
@@ -10,6 +11,8 @@ function isEmpty(data) {
 }
 
 export function createBeerContainer(data) {
+	const modals = document.querySelectorAll('.beer-modal');
+
 	if (isEmpty(data)) {
 		container.innerHTML =
 			'<p class="error-message" >There were no properties found for the given location.</p>';
@@ -18,10 +21,12 @@ export function createBeerContainer(data) {
 		container.innerHTML = '';
 	}
 
+	modals.forEach((item) => item.remove());
+
 	savePrevSearch();
 
 	data.forEach((item) => {
-		new Beer(item, container);
+		new MainBeer(item, container);
 	});
 
 	moveToFirst();
