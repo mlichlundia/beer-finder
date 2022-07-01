@@ -91,7 +91,6 @@ export class Beer {
 
 		enableFavButton();
 		FavModal.updateListRemove(this);
-		console.log(this.addButton, this.removeButton);
 	}
 
 	toggleButtons() {
