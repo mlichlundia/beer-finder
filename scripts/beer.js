@@ -104,6 +104,7 @@ export class Beer {
 		const isFav = storedFavs?.filter((item) => item.id === this.data.id);
 
 		if (isFav?.length) {
+
 			this.toggleButtons();
 		}
 	}
